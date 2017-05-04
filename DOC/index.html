@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eract - DOC</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style>
+        body {font-family: 'Muli'; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+        *:focus {outline: none!important;}
+    </style>
+    <link rel="stylesheet" href="prism.css" />
+  </head>
+  <body>
+     <div id="root">
+         <!-- fixed navigation -->
+         <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse small">
+             <a class="navbar-brand" href="#">Eract - DOC</a>
+             <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                     <a class="nav-link" href="#intro">Intro</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#structure">Structure</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#quick-start">Quick Start</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#in-development">In Development</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#using-sass">Using SASS</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#using-components">Using Components</a>
+                 </li>
+             </ul>
+         </nav>
+
+         <div class="container" style="margin-top: 5rem">
+             <div class="mb-4">
+                 <h3 id="intro">Introduction</h3>
+                 <hr />
+                 <p class="lead">Thank you for purchasing. If you have any questions that are beyond the scope of this documentation, please feel free to <a href="https://themeforest.net/user/solutionportal">contact me</a>. Rate it if you like it, thanks so much!</p>
+                 <p>Eract - ReactJS Admin Template built on <a href="https://github.com/facebookincubator/create-react-app">Create-React-App</a> cli from facebook. So, much of the docs are already covered <a href="https://github.com/facebookincubator/create-react-app#getting-started">officially.</a>
+                     In addition, this version also use <em>SASS</em>&nbsp; for css styling through the use of <a href="https://www.npmjs.com/package/custom-react-scripts">custom-react script</a> which I'll describe in this doc and lastly I'll describe the quick summary and structure of this template.</p>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="structure">File Structure</h3>
+                 <hr />
+                 <p>The following are the file structure and contents of the template folder:</p>
+                 <pre>
+ ├── <strong>Eract</strong>/
+     ├── <strong>app</strong>                               : Main folder
+         ├── <b>public</b>/                              :  Contains the static assets (index, static images).
+         ├── <b>src</b>/                                 :  Contains the development version and core files
+             ├── <b>shared/</b>                          : contains shared components (header, nav, footer)
+             ├── <b>views/</b>                           : contains all react components and page views.
+             ├── App.js, app.scss                 : The wrapper for the whole views and its common style
+             ├── index.js, index.scss             : The main starting point of react app and common style.
+             ├── routes.js                        : The main routes file which initialize react router.
+             ├── .env                             : Used by `custom-react-script` package for supporting sass, less etc.
+             ├── package.json                     : The npm (nodejs package manager) file.
+             ├── README.md                        : The official create-react-app cli readme.
+     ├── <strong>doc</strong>                               : The DOC you're reading
+                 </pre>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="quick-start">Quick Start</h3>
+                 <hr />
+                 <p>After you've purchased the template, download the zip file, extract it and do the following:</p>
+                 <ul>
+                     <li>Go to the <code>app/build</code> folder which already compiled to production using webpack build system.</li>
+                     <li>Start the http server of your choice (which support HTML5 PushState). If your server doesn't support pushstate, you can install <a href="https://github.com/scottcorgan/pushstate-server">this (pushstate)</a> http server or <a href="https://www.npmjs.com/package/http-server">this server</a> after installing <a href="http://nodejs.org/">nodejs</a>.
+                     </li>
+                     <li>Now serve the directory <code>app/build</code> on http-server and </code>open the browser to browse on localhost. That's it. You're now running the production build in the browser.</li>
+                 </ul>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="in-development">Start in Development</h3>
+                 <hr />
+                 <div class="alert-warning small p-2 mb-2"><strong>NOTE:</strong>&nbsp;Before you start the template in development, you need to install <a href="http://nodejs.org">nodejs</a> (and npm) in your pc.</div>
+                 <p>On top of official <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> cli, I use <a href="https://www.npmjs.com/package/custom-react-scripts">custom-react-script</a> npm package which enables sass or less or css-modules for using with the app. SASS preprocessor already enabled it via <code>.env</code> file which provides custom variables switches to enable/disable preprocessor.</p>
+                 <p>As the template already initiated with the cli, so you don't need to type this command <code>create-react-app my-project-name</code> as given in the official doc. You've to just do the following:</p>
+                 <ul>
+                     <li>Install all the dependencies with <code>npm install</code> by typing in the terminal.</li>
+                     <li>And finally type the <code>npm start</code> to start the webpack-dev server.</li>
+                 </ul>
+                 <p>The dev server will automatically start the browser and listen on <strong>localhost:3000</strong> port for development. From that time on, whenever you edit any script or file the server will hot-reload the file and refresh the browser.</p>
+                 <p>Now when you think, your editing will complete and you want the fresh production version. Simply execute <code>npm run build</code> command from terminal to output the production version in <code>app -> build</code> folder.</p>
+                 <p>There's a <code>app -> public</code> folder which include <code>index.html</code> and other static image and favicon. The structure of the <code>index.html</code> is very simple and doesn't do much other than putting google fonts and loading bar.</p>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="using-sass">Using SASS</h3>
+                 <hr />
+                 <p>Beside SASS, you can use also the following preprocessors for css in template -- <strong>LESS, Stylus and CSS-Modules</strong>.
+                     Just enable the variable flag in <code>.env</code> file. And note also if you remove this file, then sass-preprocessor would not work. So, make sure file is there in the main template folder before starting the server.</p>
+                 <p>The SASS (scss) files used in the template is bit different from something we used in simple angular/html templates. I used different sass files for each react components and pages so that each component is independent of each other.
+                     Also each component sass files name doesn't start with underscore <code>(_)</code> because it was packed ultimately by webpack. Files which are shared like variables file are start with underscore (_)</p>
+                <p>Take for eg: the structure of <code>app/src/views/dashboard</code> folder which include specific sass style file for that view and import using es6 <code>import</code> function in js file.</p>
+                <p>All shared sass files are in the <code>app/src/shared/</code> folder. I used bootstrap 4 as a base framework and override it's styles and variables in the following files:</p>
+                <ul>
+                    <li>app -> src -> <span class="text-danger">index.scss</span></li>
+                    <li>app -> src -> shared -> <span class="text-danger">_variables.scss</span></li>
+                </ul>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="using-components">Using Components</h3>
+                 <hr />
+                 <p>Each react nav views (route views) are divided into components and in separate folder with separate sass stylesheet and attached with react-router in <code>routes.js</code> file.
+                     It means you can remove and add each component easily which you don't need. For example, if I want to remove <em>Mail View</em> from the template, I would simply do the following:</p>
+                <ul>
+                    <li>Will Remove the app -> src -> views -> <span class="text-danger">mail</span> folder</li>
+                    <li>Will unlink the mail route from the <code>routes.js</code> file.</li>
+                </ul>
+                <p>Eract, admin template uses <a href="https://v4-alpha.getbootstrap.com/">bootstrap 4</a> and <a href="reactstrap.github.io">reactstrap</a> for ui components. Though optional, reactsrap makes it easy to write bootstrap 4 ui components in react form and easy to readable. Take an example of button component:</p>
+                <pre><code  class="language-html">&lt;Button color="primary"&gt;Simple Btn&lt;/Button&gt;  &lt!-- where color is primary, secondary, warning, info, danger --&gt;</code></pre>
+                <p>will render this bootstrap primary button with easy to eyes and this is how react make it easy to write component</p>
+                <button class="btn btn-primary">Simple Btn</button>
+                <p>There's much more than that was already written in the official doc. So head over to it and read how to integrate with your backend, testing components etc.</p>
+             </div>
+
+             <div class="mb-4">
+                 <h3 id="using-components">Credits</h3>
+                 <hr />
+                 <p>This template made possible with the following scripts and packages:</p>
+                 <ul>
+                     <li><a href="https://github.com/facebookincubator/create-react-app">create-react-app</a></li>
+                     <li><a href="https://reactstrap.github.io">reactstrap</a></li>
+                     <li><a href="http://recharts.org">recharts</a></li>
+                     <li><a href="https://github.com/facebook/draft-js">draftjs</a></li>
+                     <li><a href="https://github.com/igorprado/react-notification-system">react-notification-system</a></li>
+                     <li><a href="https://github.com/glittershark/reactable">reactable</a></li>
+                     <li><a href="https://github.com/souhe/reactScrollbar">react-scrollbar</a></li>
+                     <li><a href="https://github.com/JedWatson/react-select">react-select</a></li>
+                     <li><a href="https://github.com/ReactTraining/react-router">react-router</a></li>
+                 </ul>
+
+             </div>
+
+
+         </div> <!-- end container -->
+         <footer class="small p-2" style="background: #263238; color: #fff">
+             Copyright &copy;&nbsp;2017,&nbsp; <a href="https://themeforest.net/user/solutionportal">SolutionPortal</a>
+         </footer>
+
+     </div> <!-- end root -->
+     <script src="prism.js"></script>
+  </body>
+</html>
